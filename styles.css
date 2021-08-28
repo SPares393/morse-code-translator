@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  margin-top: 25px;
+  font-size: 3rem;
+}
+
+.input {
+  width: 600px;
+  height: 400px;
+  margin: 25px 50px;
+  padding: 5px;
+  font-size: 2rem;
+}
