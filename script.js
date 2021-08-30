@@ -1,11 +1,3 @@
-//   ".": "*-*-*-"
-//   ",": "--**--"
-//   ":": "---***"
-//   "?": "**--**"
-//   "'": "*----*"
-//   "-": "-****-"
-//   "/": "-**-*"
-
 const charactersEnglish = [
   "A",
   "B",
@@ -103,9 +95,14 @@ const charactersMorse = [
 const inputs = document.querySelectorAll(".input");
 const inputEnglish = document.querySelector(".input__english");
 const inputMorse = document.querySelector(".input__morse");
-const buttonTranslate = document.querySelector(".button__translate");
+const buttonTranslateEnglish = document.querySelector(
+  ".button__translate--english"
+);
+const buttonTranslateMorse = document.querySelector(
+  ".button__translate--morse"
+);
 
-const translateInput = () => {
+const translateEnglish = () => {
   const getCharacters = inputEnglish.value.split("");
   const translateCharacters = getCharacters.map((i) => {
     const ch = charactersEnglish.indexOf(i.toUpperCase());
@@ -114,4 +111,15 @@ const translateInput = () => {
   inputMorse.value = translateCharacters.join(" ");
 };
 
-buttonTranslate.addEventListener("click", translateInput);
+const translateMorse = () => {
+  const getCharacters = inputMorse.value.split(" ");
+  const translateCharacters = getCharacters.map((i) => {
+    const ch = charactersMorse.indexOf(i.toUpperCase());
+    return charactersEnglish[ch].toLowerCase();
+  });
+  inputEnglish.value = translateCharacters.join("");
+};
+
+buttonTranslateEnglish.addEventListener("click", translateEnglish);
+
+buttonTranslateMorse.addEventListener("click", translateMorse);

@@ -17,8 +17,13 @@
 
 .input {
   width: 600px;
-  height: 400px;
+  height: 300px;
   margin: 25px 50px;
   padding: 5px;
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+.button__translate {
+  height: 50px;
+  width: 250px;
+  margin: 10px 200px;
 }
